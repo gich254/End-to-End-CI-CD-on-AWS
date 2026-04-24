@@ -1,0 +1,14 @@
+{
+  "family": "myapp-task",
+  "networkMode": "awsvpc",
+  "containerDefinitions": [{
+    "name": "myapp-container",
+    "image": "https://github.com/gich254/End-to-End-CI-CD-on-AWS.git:latest",
+    "portMappings": [{ "containerPort": 3000, "protocol": "tcp" }],
+    "essential": true
+  }],
+  "requiresCompatibilities": ["FARGATE"],
+  "cpu": "256",
+  "memory": "512",
+  "executionRoleArn": "arn:aws:iam::803871049728:role/ecsTaskExecutionRole"
+}
